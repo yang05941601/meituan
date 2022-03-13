@@ -8,6 +8,7 @@ public class Train1 {
         for(int i = 0; i < arr_zhongshu.length;i++){
             System.out.println(arr_zhongshu[i]);
         }
+        System.out.println("This is a Hot-Fix branch");
     }
 
     public int[] zhongshu(int n, int K, int[] num) {
