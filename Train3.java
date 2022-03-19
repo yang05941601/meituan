@@ -29,6 +29,7 @@ public class Train3 {
     }
 
     public void dfs(int[][] edges, int[] vertex, int index, int[] res, int[] wall) {
+        // wall 表示每次将当前行的后续联通索引标记上，表示后续也不能选取这些点
         if (index+1>=vertex.length) {
             if (max_sum<=res[0]) {
                 max_sum = res[0];
@@ -47,6 +48,7 @@ public class Train3 {
                     wall[j] = edges[i][j] + wall[j];
                 }
                 dfs(edges,vertex,i,res,wall);
+                // 回退操作
                 res[0] -= vertex[i];
                 res[1] = temp;
                 wall = temp_wall;
